@@ -1,0 +1,118 @@
+{%extends 'base.html'%}
+
+{%block main-block%}
+
+<a href="" class="group relative block">
+  <div class="relative h-[350px] sm:h-[450px]">
+    <img
+      src="https://img.freepik.com/premium-photo/futuristic-light-bulbs-glowing-with-warm-yellow-hues-symbol-innovative-energysaving-ideas_924727-10062.jpg"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"
+    />
+
+    <img
+      src="https://uploads.prod01.sydney.platformos.com/instances/210/assets/images/_info/future_light_types.webp"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100"
+    />
+  </div>
+
+  <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+    <h3 class="text-xl font-medium text-white">Discover the finest in professional lighting.</h3>
+
+    <p class="mt-1.5 text-pretty text-xs text-white">
+      Explore from the wide range of high-quality energy efficient lamps and luminaires systems and services
+    </p>
+
+    
+        <!-- <span 
+          
+      class="mt-3 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+    >
+    
+      Shop Now
+        
+    </span> -->
+    
+  </div>
+</a>
+
+
+
+<section>
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <header class="text-center">
+        <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Product Catalogue</h2>
+  
+        <!-- <p class="mx-auto mt-4 max-w-md text-gray-500">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium cumque iure
+          dicta incidunt est ipsam, officia dolor fugit natus?
+        </p> -->
+      </header>
+  
+      <ul class="mt-2 grid gap-6 sm:grid-cols-10 lg:grid-cols-4">
+        
+       {%for p in data%}
+
+           
+       
+                
+         <li>
+           <a href="" class="group block overflow-hidden">
+
+            
+                <img
+                   src="{{p.image.url}}"
+                   alt=""
+                   class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                />
+  
+       
+   
+            
+           
+
+         <div class="relative bg-white pt-3">
+         <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+          {{p.name}}
+          <!-- {%if p.category_object%}
+          {{p.category_object.name}}
+          
+          {%endif%} -->
+         </h3>
+
+         <p class="mt-2">
+          <span class="sr-only"> Regular Price </span>
+
+          <span class="tracking-wider text-gray-900"> </span>
+         </p>
+         
+        <form class="mt-4 flex gap-4">
+
+          <a href="{%url 'category_list' p.id%}"
+              class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+            >
+              View 
+            </a>
+    
+          
+        </form>
+        </div>
+          </a>
+         </li>
+ 
+
+          
+       {%endfor%}
+        
+  
+        
+  
+       
+      </ul>
+    </div>
+  </section>
+  
+
+
+{%endblock%}
